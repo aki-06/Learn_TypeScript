@@ -1,6 +1,51 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React from "react";
+import logo from "./logo.svg";
+import "./App.css";
+
+// 書き換え不可
+const name = "hello";
+
+// 書き換え可
+let nameChange = "hello";
+nameChange = "hello2";
+
+// アノテーション(型推論してくれるため基本的には不要)
+let userName: string = "hello";
+let num: Number = 2;
+let bool: Boolean = true;
+
+// 配列
+let array1 = [true, false, true];
+let array2 = [0, 1, "heelo"];
+
+// オブジェクト
+interface NAME {
+  first: string;
+  last: string;
+}
+
+// |をつけると指定したどちらかの型を許容する
+// ?をつけるとlastの値がある場合のみ代入される
+interface NAME2 {
+  first: string | null;
+  last?: string;
+}
+
+let nameObj: NAME = { first: "Yamada", last: "Taro" };
+
+// lastの型が違うためエラー
+// let nameObj: NAME = { first: "Yamada", last: 1 };
+
+// interfaceの定義と異なるためエラー
+// let nameObj: NAME = { first: "Yamada" };
+
+let nameObj2: NAME2 = { first: null };
+
+// 関数
+// 戻り値の型はしていなくても良い
+const func1 = (x: number, y: number): number => {
+  return x + y;
+};
 
 function App() {
   return (
