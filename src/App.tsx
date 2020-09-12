@@ -67,6 +67,24 @@ const userA: USER = {
   password: "yyy",
 };
 
+// Union Types(受け取れる型を制限する)
+let value: boolean | number;
+value = true;
+value = 10;
+// エラーになる
+// value = "string";
+
+let arrayUni: (number | string)[];
+arrayUni = [0, 1, "hello"];
+// エラーになる
+// arrayUni = [true, false]
+
+// Literal Types
+let company: "Facebook" | "Google" | "Amazon";
+company = "Amazon";
+// エラーになる
+// company = "Apple";
+
 function App() {
   return (
     <div className="App">
