@@ -85,6 +85,33 @@ company = "Amazon";
 // エラーになる
 // company = "Apple";
 
+// typeof(宣言済み変数の型を取得)
+let msg: string = "Hi";
+let msg2: typeof msg;
+msg2 = "hello";
+// エラーになる
+// msg2 = 1;
+
+let animal = { cat: "small cat" };
+let newAnimal: typeof animal = { cat: "big cat" };
+
+// keyof
+type KEYS = {
+  primary: string;
+  secondary: string;
+};
+let key: keyof KEYS;
+key = "primary";
+
+// typeof + keyof
+const SPORTS = {
+  soccer: "Soccer",
+  baseball: "Baseball",
+};
+
+let keySports: keyof typeof SPORTS;
+keySports = "soccer";
+
 function App() {
   return (
     <div className="App">
